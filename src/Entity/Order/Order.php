@@ -11,4 +11,16 @@ use Sylius\Component\Core\Model\Order as BaseOrder;
 #[ORM\Table(name: 'sylius_order')]
 class Order extends BaseOrder
 {
+    #[ORM\Column(type: 'text', nullable: true)]
+    private ?string $notatka = null;
+
+    public function getNotatka(): ?string
+    {
+        return $this->notatka;
+    }
+
+    public function setNotatka(?string $notatka): void
+    {
+        $this->notatka = $notatka;
+    }
 }
